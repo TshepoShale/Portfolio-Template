@@ -32,15 +32,15 @@ import {
 export const navLinks = [
   {
     id: 'about',
-    title: 'About',
+    title: 'Base',
   },
   {
     id: 'projects',
-    title: 'Projects',
+    title: 'Creations',
   },
   {
     id: 'contact',
-    title: 'Contact',
+    title: 'Interact',
   },
 ];
 
@@ -50,15 +50,12 @@ const services = [
     icon: frontend,
   },
   {
-    title: 'Backend Developer',
+    title: 'Project Manager',
     icon: backend,
   },
+  
   {
-    title: 'UI/UX Design',
-    icon: ux,
-  },
-  {
-    title: 'Software Prototyping',
+    title: 'Agile/SCRUM',
     icon: prototyping,
   },
 ];
