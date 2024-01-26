@@ -58,6 +58,7 @@ const services = [
     title: 'Agile/SCRUM',
     icon: prototyping,
   },
+  
 ];
 
 const technologies = [
@@ -73,18 +74,12 @@ const technologies = [
     name: 'JavaScript',
     icon: javascript,
   },
-  {
-    name: 'TypeScript',
-    icon: typescript,
-  },
+
   {
     name: 'React JS',
     icon: reactjs,
   },
-  {
-    name: 'Redux Toolkit',
-    icon: redux,
-  },
+ 
   {
     name: 'Tailwind CSS',
     icon: tailwind,
@@ -94,18 +89,6 @@ const technologies = [
     icon: nodejs,
   },
   {
-    name: 'Rails',
-    icon: rubyrails,
-  },
-  {
-    name: 'graphql',
-    icon: graphql,
-  },
-  {
-    name: 'postgresql',
-    icon: postgresql,
-  },
-  {
     name: 'git',
     icon: git,
   },
@@ -113,10 +96,7 @@ const technologies = [
     name: 'figma',
     icon: figma,
   },
-  {
-    name: 'docker',
-    icon: docker,
-  },
+ 
 ];
 
 const experiences = [
