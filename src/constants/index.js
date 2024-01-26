@@ -122,6 +122,14 @@ const experiences = [
     iconBg: '#333333',
     date: 'July 2016 - August 2018',
   },
+  {
+    title: 'Casual',
+    company_name: 'Food Lovers Market',
+    icon: coverhunt,
+    iconBg: '#333333',
+    date: 'December 2014',
+
+  }
 ];
 
 const projects = [
