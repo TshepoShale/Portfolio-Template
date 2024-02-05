@@ -74,14 +74,16 @@ const Contact = () => {
     <div className="-mt-[8rem] xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
-        className="flex-[0.75] bg-jet p-8 rounded-2xl">
+        className="flex-[0.75] bg-jet p-8 rounded-2xl"
+      >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadTextLight}>Contact.</h3>
 
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-10 flex flex-col gap-6 font-poppins">
+          className="mt-10 flex flex-col gap-6 font-poppins relative"
+        >
           <label className="flex flex-col">
             <span className="text-timberWolf font-medium mb-4">Your Name</span>
             <input
@@ -135,6 +137,7 @@ const Contact = () => {
             onChange={onReCAPTCHAChange}
           />
 
+          {/* Send button */}
           <button
             type="submit"
             className="live-demo flex justify-center sm:gap-4 
@@ -151,7 +154,8 @@ const Contact = () => {
             }}
             onMouseOut={() => {
               document.querySelector('.contact-btn').setAttribute('src', send);
-            }}>
+            }}
+          >
             {loading ? 'Sending' : 'Send'}
             <img
               src={send}
