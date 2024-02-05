@@ -180,7 +180,7 @@ const projects = [
   {
     id: 'project-3',
     name: 'Math Magicians',
-    description: 'This is a single-page calculator app built with React',
+    description: 'This is a single-page calculator app built with React.',
     tags: [
       {
         name: 'nextjs',
