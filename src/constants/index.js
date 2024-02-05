@@ -135,8 +135,8 @@ const experiences = [
 const projects = [
   {
     id: 'project-1',
-    name: 'KomiKult',
-    description: 'A comic characters list app that displays Marvel characters.',
+    name: 'Unit Converter',
+    description: 'Basic Unit metric converter, coded in Java.',
     tags: [
       {
         name: 'react',
@@ -152,8 +152,7 @@ const projects = [
       },
     ],
     image: komikult,
-    repo: 'https://github.com/shaqdeff/KomiKult',
-    demo: 'https://shaqdeff.github.io/KomiKult/',
+    repo: 'https://github.com/TshepoShale/Unit-Converter-in-Java.git',
   },
   {
     id: 'project-2',
@@ -224,9 +223,9 @@ const projects = [
   },
   {
     id: 'project-5',
-    name: 'Nyeusi Fest Site',
+    name: 'Banking App',
     description:
-      'This is a demo concert website for a music festival called Nyeusi.',
+      'This is a simple banking app, coded in Python, with a simple Graphical User Interface.',
     tags: [
       {
         name: 'nextjs',
@@ -242,8 +241,7 @@ const projects = [
       },
     ],
     image: nyeusi,
-    repo: 'https://github.com/shaqdeff/Nyeusi-Fest-Site',
-    demo: 'https://shaqdeff.github.io/Nyeusi-Fest-Site/',
+    repo: 'https://github.com/TshepoShale/pythonProject1.git',
   },
 ];
 
