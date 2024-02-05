@@ -133,7 +133,7 @@ const Contact = () => {
           <ReCAPTCHA
             ref={recaptchaRef}
             sitekey="6Ld_I1wpAAAAABFhM10IbuVHR5mTmon6Trdvdb0D" // Replace with your actual reCAPTCHA site key
-            size="invisible"
+            size="visible"
             onChange={onReCAPTCHAChange}
           />
 
