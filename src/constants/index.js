@@ -201,8 +201,8 @@ const projects = [
   },
   {
     id: 'project-4',
-    name: 'Movie Metro',
-    description: `A single-page application that allows users to search for any movie or show's ratings and its details.`,
+    name: 'Skillset Exhibit',
+    description: `A showcase of my skills, by means of a professional portfolio. This is me, in a nutshell. Feast your eyes!`,
     tags: [
       {
         name: 'nextjs',
@@ -218,8 +218,8 @@ const projects = [
       },
     ],
     image: movie,
-    repo: 'https://github.com/shaqdeff/Movie-Metro',
-    demo: 'https://movie-metro.netlify.app/',
+    repo: 'https://github.com/TshepoShale/Portfolio.git',
+    demo: 'https://stalwart-heliotrope-9d0745.netlify.app/',
   },
   {
     id: 'project-5',
