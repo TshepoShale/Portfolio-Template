@@ -157,9 +157,9 @@ const projects = [
   },
   {
     id: 'project-2',
-    name: 'Leaderboard',
+    name: 'edtech Website',
     description:
-      'A leaderboard list app that displays scores submitted by different players.',
+      'A state-of-the-art website based and focused on EdTech.',
     tags: [
       {
         name: 'react',
@@ -175,8 +175,8 @@ const projects = [
       },
     ],
     image: leaderboard,
-    repo: 'https://github.com/shaqdeff/Leaderboard',
-    demo: 'https://shaqdeff.github.io/Leaderboard/',
+    repo: 'https://github.com/TshepoShale/GroupWebsite.git',
+    demo: 'https://group-website-sqq9-pvam45sss-tsheposhales-projects.vercel.app/',
   },
   {
     id: 'project-3',
