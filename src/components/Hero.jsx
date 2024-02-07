@@ -1,8 +1,25 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { styles } from '../styles';
-import { navLinks } from '../constants';
-import { shaq, bwmap, worldmap } from '../assets';
+import { bwmap, worldmap, shaq } from '../assets';
+
+const SocialMediaIcons = () => {
+  return (
+    <div className="flex gap-3 mt-3">
+      <a href="https://www.linkedin.com/in/tshepo-shale-398490184" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faLinkedin} size="2x" className="text-black" />
+      </a>
+      <a href="https://discord.gg/sYRGksvH" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faDiscord} size="2x" className="text-black" />
+      </a>
+      <a href="https://github.com/TshepoShale?tab=repositories" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faGithub} size="2x" className="text-black" />
+      </a>
+    </div>
+  );
+}
 
 const Hero = () => {
   return (
@@ -48,13 +65,13 @@ const Hero = () => {
             <p className={`${styles.heroSubText} mt-2 text-eerieBlack`}>
               Software Developer. Project Manager. <br className="sm:block hidden" />
               Avid Problem-Solver. Solutions Driven.
+              <SocialMediaIcons />
             </p>
           </div>
           <div
             className="w-screen flex flex-col items-start 
-            justify-center sm:-ml-[3rem] xxs:mt-4"></div>
-
-          <div></div>
+            justify-center sm:-ml-[3rem] xxs:mt-4">
+          </div>
         </div>
 
         <div
