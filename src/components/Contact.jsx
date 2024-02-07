@@ -24,45 +24,65 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
+
+    // Basic form validation
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      alert('Please fill out all fields.');
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
 
     // Verify reCAPTCHA
-    recaptchaRef.current.execute();
+    if (!recaptchaRef.current.getValue()) {
+      alert('Please complete the reCAPTCHA challenge.');
+      return;
+    }
+
+    setLoading(true);
+
+    // Continue with form submission logic
+    emailjs
+      .send(
+        'service_uu7aoat', // Replace with your ServiceID
+        'template_gw06l5i', // Replace with your TemplateID
+        {
+          from_name: form.name,
+          to_name: 'Tshepo',
+          from_email: form.email,
+          to_email: 'tshale0603@gmail.com',
+          message: form.message,
+        },
+        'Ck4wctXWJH-xgZXoW'
+      )
+      .then(
+        () => {
+          setLoading(false);
+          alert('Thank you. I will get back to you as soon as possible.');
+          setForm({
+            name: '',
+            email: '',
+            message: '',
+          });
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error);
+          alert('Something went wrong. Please try again.');
+        }
+      );
   };
 
-  const onReCAPTCHAChange = (captchaValue) => {
+  const handleReCAPTCHAChange = (captchaValue) => {
     // Handle reCAPTCHA verification
     if (captchaValue) {
-      // Continue with your form submission logic
-      emailjs
-        .send(
-          'service_uu7aoat', // Replace with your ServiceID
-          'template_gw06l5i', // Replace with your TemplateID
-          {
-            from_name: form.name,
-            to_name: 'Tshepo',
-            from_email: form.email,
-            to_email: 'tshale0603@gmail.com',
-            message: form.message,
-          },
-          'Ck4wctXWJH-xgZXoW'
-        )
-        .then(
-          () => {
-            setLoading(false);
-            alert('Thank you. I will get back to you as soon as possible.');
-            setForm({
-              name: '',
-              email: '',
-              message: '',
-            });
-          },
-          (error) => {
-            setLoading(false);
-            console.log(error);
-            alert('Something went wrong. Please try again.');
-          }
-        );
+      // Continue with form submission
+      handleSubmit();
     } else {
       // Handle case where reCAPTCHA verification fails
       setLoading(false);
@@ -81,8 +101,8 @@ const Contact = () => {
 
         <form
           ref={formRef}
-          onSubmit={handleSubmit}
           className="mt-10 flex flex-col gap-6 font-poppins relative"
+          onSubmit={handleSubmit}
         >
           <label className="flex flex-col">
             <span className="text-timberWolf font-medium mb-4">Your Name</span>
@@ -134,7 +154,7 @@ const Contact = () => {
             ref={recaptchaRef}
             sitekey="6Les8GgpAAAAAFoBrYoXvsbrXPmtM10x2QMZwnL5" // Replace with your actual reCAPTCHA site key
             size="visible"
-            onChange={onReCAPTCHAChange}
+            onChange={handleReCAPTCHAChange}
           />
 
           {/* Send button */}
@@ -147,18 +167,10 @@ const Contact = () => {
             w-[100px] h-[45px] rounded-[10px] bg-night 
             hover:bg-battleGray hover:text-eerieBlack 
             transition duration-[0.2s] ease-in-out"
-            onMouseOver={() => {
-              document
-                .querySelector('.contact-btn')
-                .setAttribute('src', sendHover);
-            }}
-            onMouseOut={() => {
-              document.querySelector('.contact-btn').setAttribute('src', send);
-            }}
           >
             {loading ? 'Sending' : 'Send'}
             <img
-              src={send}
+              src={loading ? sendHover : send}
               alt="send"
               className="contact-btn sm:w-[26px] sm:h-[26px] 
               w-[23px] h-[23px] object-contain"
