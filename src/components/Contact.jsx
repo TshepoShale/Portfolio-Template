@@ -38,13 +38,15 @@ const Contact = () => {
       return;
     }
 
+    setLoading(true);
+
     // Verify reCAPTCHA
-    if (!recaptchaRef.current.getValue()) {
+    const captchaValue = recaptchaRef.current.getValue();
+    if (!captchaValue) {
       alert('Please complete the reCAPTCHA challenge.');
+      setLoading(false);
       return;
     }
-
-    setLoading(true);
 
     // Continue with form submission logic
     emailjs
@@ -69,6 +71,8 @@ const Contact = () => {
             email: '',
             message: '',
           });
+          // Reset reCAPTCHA
+          recaptchaRef.current.reset();
         },
         (error) => {
           setLoading(false);
@@ -76,18 +80,6 @@ const Contact = () => {
           alert('Something went wrong. Please try again.');
         }
       );
-  };
-
-  const handleReCAPTCHAChange = (captchaValue) => {
-    // Handle reCAPTCHA verification
-    if (captchaValue) {
-      // Continue with form submission
-      handleSubmit();
-    } else {
-      // Handle case where reCAPTCHA verification fails
-      setLoading(false);
-      alert('reCAPTCHA verification failed. Please complete the reCAPTCHA challenge.');
-    }
   };
 
   return (
@@ -154,7 +146,6 @@ const Contact = () => {
             ref={recaptchaRef}
             sitekey="6Les8GgpAAAAAFoBrYoXvsbrXPmtM10x2QMZwnL5" // Replace with your actual reCAPTCHA site key
             size="visible"
-            onChange={handleReCAPTCHAChange}
           />
 
           {/* Send button */}
