@@ -9,13 +9,13 @@ const SocialMediaIcons = () => {
   return (
     <div className="flex gap-3 mt-3">
       <a href="https://www.linkedin.com/in/tshepo-shale-398490184" target="_blank" rel="noopener noreferrer">
-        <FontAwesomeIcon icon={faLinkedin} size="2x" className="text-black" />
+        <FontAwesomeIcon icon={faLinkedin} size="2x" className="text-grey" />
       </a>
       <a href="https://discord.gg/sYRGksvH" target="_blank" rel="noopener noreferrer">
-        <FontAwesomeIcon icon={faDiscord} size="2x" className="text-black" />
+        <FontAwesomeIcon icon={faDiscord} size="2x" className="text-grey" />
       </a>
       <a href="https://github.com/TshepoShale?tab=repositories" target="_blank" rel="noopener noreferrer">
-        <FontAwesomeIcon icon={faGithub} size="2x" className="text-black" />
+        <FontAwesomeIcon icon={faGithub} size="2x" className="text-grey" />
       </a>
     </div>
   );
