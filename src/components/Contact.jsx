@@ -48,11 +48,11 @@ const Contact = () => {
       return;
     }
 
-    // Continue with form submission logic
+    //
     emailjs
       .send(
-        'service_uu7aoat', // Replace with your ServiceID
-        'template_gw06l5i', // Replace with your TemplateID
+        'service_uu7aoat', // My ServiceID
+        'template_gw06l5i', //My  TemplateID
         {
           from_name: form.name,
           to_name: 'Tshepo',
@@ -144,7 +144,7 @@ const Contact = () => {
           {/* reCAPTCHA component */}
           <ReCAPTCHA
             ref={recaptchaRef}
-            sitekey="6Les8GgpAAAAAFoBrYoXvsbrXPmtM10x2QMZwnL5" // Replace with your actual reCAPTCHA site key
+            sitekey="6Les8GgpAAAAAFoBrYoXvsbrXPmtM10x2QMZwnL5" //reCAPTCHA site key
             size="visible"
           />
 
