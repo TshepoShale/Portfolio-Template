@@ -145,7 +145,7 @@ const Contact = () => {
           <ReCAPTCHA
             ref={recaptchaRef}
             sitekey="6Les8GgpAAAAAFoBrYoXvsbrXPmtM10x2QMZwnL5" //reCAPTCHA site key
-            size="visible"
+            size="normal"
           />
 
           {/* Send button */}
