@@ -1,3 +1,4 @@
+// Import the necessary components and hooks
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import ReCAPTCHA from 'react-google-recaptcha';
@@ -7,7 +8,9 @@ import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
 import { send, sendHover } from '../assets';
 
+// Define the Contact component
 const Contact = () => {
+  // Initialize state variables and refs
   const formRef = useRef();
   const recaptchaRef = useRef();
   const [form, setForm] = useState({
@@ -17,11 +20,13 @@ const Contact = () => {
   });
   const [loading, setLoading] = useState(false);
 
+  // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -48,11 +53,11 @@ const Contact = () => {
       return;
     }
 
-    //
+    // Send email using emailjs
     emailjs
       .send(
         'service_uu7aoat', // My ServiceID
-        'template_gw06l5i', //My  TemplateID
+        'template_gw06l5i', // My TemplateID
         {
           from_name: form.name,
           to_name: 'Tshepo',
@@ -82,6 +87,7 @@ const Contact = () => {
       );
   };
 
+  // Render the Contact form
   return (
     <div className="-mt-[8rem] xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
@@ -96,6 +102,7 @@ const Contact = () => {
           className="mt-10 flex flex-col gap-6 font-poppins relative"
           onSubmit={handleSubmit}
         >
+          {/* Form inputs */}
           <label className="flex flex-col">
             <span className="text-timberWolf font-medium mb-4">Your Name</span>
             <input
@@ -144,8 +151,9 @@ const Contact = () => {
           {/* reCAPTCHA component */}
           <ReCAPTCHA
             ref={recaptchaRef}
-            sitekey="6Les8GgpAAAAAFoBrYoXvsbrXPmtM10x2QMZwnL5" //reCAPTCHA site key
+            sitekey="6Lc7CGkpAAAAALWdHI-wEQtFuodJJzb8mecFDH0i" //  site key
             size="normal"
+            onChange={(token) => console.log("reCaptcha token: ", token)}
           />
 
           {/* Send button */}
@@ -173,4 +181,5 @@ const Contact = () => {
   );
 };
 
+// Export the Contact component wrapped with SectionWrapper
 export default SectionWrapper(Contact, 'contact');

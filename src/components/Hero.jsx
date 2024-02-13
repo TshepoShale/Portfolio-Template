@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { styles } from '../styles';
-import { bwmap, worldmap, shaq } from '../assets';
+import { bwmap, worldmap, } from '../assets';
 
 const SocialMediaIcons = () => {
   return (
@@ -97,8 +97,7 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* Your image comes here. Feel free to remove image if you don't plan to have one.*/}
-        <div>
+        {/*         <div>
           <img
             className="absolute bottom-0 ml-[50vw] 
             lg:ml-[75vw] md:ml-[60vw] xmd:ml-[60vw] 2xl:ml-[83vw]
@@ -106,7 +105,8 @@ const Hero = () => {
             src={shaq}
             alt="shaquille"
           />
-        </div>
+        </div>*/}
+
       </section>
     </>
   );
