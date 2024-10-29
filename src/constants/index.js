@@ -52,6 +52,11 @@ const services = [
     title: 'Agile/SCRUM',
     icon: prototyping,
   },
+
+  {
+    title: 'SAP Consultant',
+    icon: prototyping,
+  }, 
   
 ];
 
